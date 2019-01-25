@@ -8,7 +8,7 @@ $factory->define(App\Probe::class, function (Faker $faker) {
 });
 
 $factory->afterCreating(App\Probe::class, function (App\Probe $probe, Faker $faker) {
-    for ($i = 0; $i < 20e3; $i++) {
+    for ($i = 0; $i < 5e3; $i++) {
         $probe->measurements()->save(factory(App\ProbeMeasurement::class)->make());
     }
 });
